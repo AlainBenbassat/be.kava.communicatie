@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<extension key="be.kava.communicatie" type="module">
+  <file>communicatie</file>
+  <name>KAVA Communicatie</name>
+  <description>Voegt een e-mailadres toe van type Mailinglijst voor alle contacten met communicatievoorkeuren.</description>
+  <license>AGPL-3.0</license>
+  <maintainer>
+    <author>Alain Benbassat</author>
+    <email>alain@businessandcode.eu</email>
+  </maintainer>
+  <urls>
+    <url desc="Licensing">http://www.gnu.org/licenses/agpl-3.0.html</url>
+  </urls>
+  <releaseDate>2019-02-09</releaseDate>
+  <version>1.0</version>
+  <develStage>stable</develStage>
+  <compatibility>
+    <ver>5.0</ver>
+  </compatibility>
+  <comments></comments>
+  <civix>
+    <namespace>CRM/Communicatie</namespace>
+  </civix>
+</extension>

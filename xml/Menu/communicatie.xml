@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<menu>
+  <item>
+    <path>civicrm/kava-communicatie-email</path>
+    <page_callback>CRM_Communicatie_Form_CommunicationEmail</page_callback>
+    <title>CommunicationEmail</title>
+    <access_arguments>access CiviCRM</access_arguments>
+  </item>
+</menu>
