@@ -55,7 +55,7 @@ class CRM_Communicatie_Form_CommunicationEmail extends CRM_Core_Form {
         inner join 
           civicrm_email prim on prim.contact_id = comm.entity_id and prim.is_primary = 1 
         where
-          ifnull(comm.kava_communicatiediensten_253, '') = ''
+          ifnull(comm.kava_communicatiediensten_253, '') <> ''
         and 
           not exists (
             select * from civicrm_email em where em.contact_id = comm.entity_id and em.location_type_id = $EmailLocationType  
