@@ -48,9 +48,12 @@ class CRM_Communicatie_Form_CommunicationEmail extends CRM_Core_Form {
       // selecteer contacten MET communicatievinkjes, ZONDER e-mail MailingLijst
       $sql = "
         select
-          *
+          comm.entity_id as id
+          , prim.email as email
         from
           civicrm_value_kava_communic_76 comm
+        inner join 
+          civicrm_email prim on prim.contact_id = comm.entity_id and prim.is_primary = 1 
         where
           ifnull(comm.kava_communicatiediensten_253, '') = ''
         and 
@@ -63,7 +66,8 @@ class CRM_Communicatie_Form_CommunicationEmail extends CRM_Core_Form {
       // selecteer contacten ZONDER communicatievinkjes, MET e-mail MailingLijst
       $sql = "
         select
-          *
+          comm.entity_id as id
+          , 'dummy@dummy.be' as email 
         from
           civicrm_value_kava_communic_76 comm
         where
