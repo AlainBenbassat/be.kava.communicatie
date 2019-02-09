@@ -29,10 +29,18 @@ class CRM_Communicatie_KavaEmailMailingLijst {
   public static function remove_email($contactID) {
     $EmailLocationType = 16; // emailMailinglist
 
-    $params = [
-      'contact_id' => $contactID,
-      'location_type_id' => $EmailLocationType,
-    ];
-    civicrm_api3('Email', 'delete', $params);
+    try {
+      $params = [
+        'contact_id' => $contactID,
+        'location_type_id' => $EmailLocationType,
+        'sequential' => 1,
+      ];
+      $email = civicrm_api3('Email', 'getsingle', $params);
+
+      civicrm_api3('Email', 'delete', ['id' => $email['id']]);
+    }
+    catch (Exception $e) {
+
+    }
   }
 }
