@@ -73,7 +73,7 @@ class CRM_Communicatie_Form_CommunicationEmail extends CRM_Core_Form {
         where
           ifnull(comm.kava_communicatiediensten_253, '') = ''
         and 
-          not exists (
+          exists (
             select * from civicrm_email em where em.contact_id = comm.entity_id and em.location_type_id = $EmailLocationType  
           )
       ";
